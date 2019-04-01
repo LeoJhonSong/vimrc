@@ -6,7 +6,7 @@
 		set background=dark
 		set t_Co=256  "enable 256 colors display
 	" enable powerline for vim
-		set rtp+=/home/leo/.local/lib/python3.7/site-packages/powerline/bindings/vim/
+		" set rtp+=/home/pi/.local/lib/python3.5/site-packages/powerline/bindings/vim/
 		set laststatus=2
 " Editing Ssettings
 	" basic
@@ -44,8 +44,8 @@
 		let g:NERDCompactSexyComs = 1
 	" YouCompleteMe
 		let g:ycm_semantic_triggers =  {
-			'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}']
-		}  " toggle semantic completement whenever there is two charactors
+			\ 'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}']
+			\}  " toggle semantic completement whenever there is two charactors
 		let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
 		let g:ycm_filetype_whitelist={
 			\ "c": 1,
@@ -54,7 +54,7 @@
 			\ "sh": 1,
 			\ "html": 1,
 			\ "js": 1,
-		}
+			\}
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
@@ -71,8 +71,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'wakatime/vim-wakatime'
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
-	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+	" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
+	" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " When LaTaX
 	" Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
