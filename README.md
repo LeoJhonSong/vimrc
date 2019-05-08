@@ -3,15 +3,24 @@ Here is my vim recipe and some note about vim.
 
 ---
 
-- [Installation](#installation)
-  - [Linux](#linux)
-  - [Windows](#windows)
-  - [Mac](#mac)
-- [Shortcuts](#shortcuts)
-- [Plugin List](#plugin-List)
-- [Notes](#notes)
+1. [Pre-Requirement](#pre-requirement)
+2. [Installation](#installation)
+   1. [Linux](#linux)
+   2. [Windows](#windows)
+   3. [Mac](#mac)
+3. [Shortcuts](#shortcuts)
+4. [Plugin List](#plugin-list)
+5. [Notes](#notes)
 
 ---
+
+## Pre-Requirement
+
+`clang`, `cmake` is needed.
+
+```shell
+sudo apt install clang, cmake
+```
 
 ## Installation
 

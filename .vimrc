@@ -44,17 +44,17 @@
 		let g:NERDCompactSexyComs = 1
 	" YouCompleteMe
 		let g:ycm_semantic_triggers =  {
-			'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}']
-		}  " toggle semantic completement whenever there is two charactors
+			\ 'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}'],
+			\ }  " toggle semantic completement whenever there is two charactors
 		let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
-		let g:ycm_filetype_whitelist={
+		let g:ycm_filetype_whitelist = {
 			\ "c": 1,
 			\ "cpp": 1,
 			\ "py": 1,
 			\ "sh": 1,
 			\ "html": 1,
 			\ "js": 1,
-		}
+			\ }
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
