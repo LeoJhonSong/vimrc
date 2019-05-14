@@ -37,9 +37,14 @@
 		" set mouse=a  " enable mouse click in vim
 		set nocompatible  " get rid of bugs and limits from vi
 " Keybindings
-	map <C-\> <leader>ci  " comment and uncomment
-	map <C-S-e> :NERDTreeToggle<CR>  " display and hide explorer
-	map <C-f> gg0=G  " format whole file
+	" comment and uncomment
+	map <C-\> <leader>ci
+	" display and hide explorer
+	map <C-S-e> :NERDTreeToggle<CR>
+	" without this, ALT will send `^[` to the terminal, which is the same with ESC
+	execute "set <A-f>=\ef"
+	" format whole file
+	map <A-f> gg0=G
 " Plugin Settings
 	" NERD Tree
 		" show hidden files and folders
