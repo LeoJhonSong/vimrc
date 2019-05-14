@@ -6,21 +6,27 @@
 		set background=dark
 		set t_Co=256  "enable 256 colors display
 	" enable powerline for vim
-		set rtp+=/home/leo/.local/lib/python3.7/site-packages/powerline/bindings/vim/
+		set rtp+=/home/leo/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
 		set laststatus=2
 " Editing Ssettings
 	" basic
 		set backspace=indent,eol,start  " allows backspace to delete hard indents. concat two lines, content added by other insert operation
-		set tabstop=4  " "default tab size
-		" set smartindent
 		set cursorline  " highlight current line
 		set cursorcolumn  " highlight current column
 		set number  " display line number
 		set colorcolumn=81,121  " sset line length notification
 		set nowrap  " disable line wrap
 		set showmatch  " show matched brackets
-		set list lcs=tab:\|\ ,nbsp:%,trail:·
 		set autochdir  " automatically change to current directory
+	" tab
+		set tabstop=4  " show existing tab with 4 spaces width
+		set shiftwidth=4  " when indenting with '>', use 4 spaces width
+		" set expandtab  " On pressing tab, insert 4 spaces
+		set list lcs=tab:\|\ ,nbsp:%,trail:·
+	" filetype
+		filetype on
+		filetype plugin on
+		filetype indent on
 	" search
 		set hlsearch  " hilight search item
 		set incsearch  " enable incremental search
@@ -33,6 +39,7 @@
 " Keybindings
 	map <C-\> <leader>ci  " comment and uncomment
 	map <C-S-e> :NERDTreeToggle<CR>  " display and hide explorer
+	map <C-f> gg0=G  " format whole file
 " Plugin Settings
 	" NERD Tree
 		" show hidden files and folders
@@ -77,4 +84,3 @@ call plug#begin('~/.vim/plugged')
 	" Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
 call plug#end()
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
