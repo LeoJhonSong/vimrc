@@ -31,21 +31,31 @@
 		set hlsearch  " hilight search item
 		set incsearch  " enable incremental search
 	" Syntax
-		syntax on
+		syntax on  "so that we have syntax highlight
 	" others
 		set t_vb=  " disable the annoying bell when did wrong operation
 		" set mouse=a  " enable mouse click in vim
 		set nocompatible  " get rid of bugs and limits from vi
-" Keybindings
+" Keybindings and Commands
+	" set map leader
+	let mapleader=","
 	" comment and uncomment
-	map <C-\> <leader>ci
+	map <leader><C-m> <leader>ci
 	" display and hide explorer
-	map <C-S-e> :NERDTreeToggle<CR>
+	map <leader><C-e> :NERDTreeToggle<CR>
 	" without this, ALT will send `^[` to the terminal, which is the same with ESC
-	execute "set <A-f>=\ef"
+	" execute "set <A-f>=\ef"
 	" format whole file
-	map <A-f> gg0=G
-" Plugin Settings
+	map <leader><C-f> gg0=G
+	" split window horizontally
+	map <leader><C-h> :sv 
+	" split window vertically
+	map <leader><C-v> :vs 
+	" toggle terminal
+	map <C-t> :ter<CR><C-w>J
+	" write with sudo
+	map <leader><C-w> :w !sudo tee >/dev/null %
+	" Plugin Settings
 	" NERD Tree
 		" show hidden files and folders
 		let NERDTreeShowHidden=1
