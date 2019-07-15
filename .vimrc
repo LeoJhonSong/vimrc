@@ -55,7 +55,7 @@
 	map <C-t> :ter<CR><C-w>J
 	" write with sudo
 	map <leader><C-w> :w !sudo tee >/dev/null %
-	" Plugin Settings
+" Plugin Settings
 	" NERD Tree
 		" show hidden files and folders
 		let NERDTreeShowHidden=1

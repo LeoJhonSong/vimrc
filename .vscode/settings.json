@@ -1,0 +1,6 @@
+{
+    "files.watcherExclude": {
+        "**/autoload/**": true,
+        "**/plugged/**": true
+    }
+}
