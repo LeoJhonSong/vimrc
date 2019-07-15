@@ -15,7 +15,9 @@ Here is my vim recipe and some note about vim.
 
 It looks like this👇
 
-![](appearance.png)
+![Normal mode](appearance.png)
+
+![Insert mode](appearance2.png)
 
 ## Pre-Requirement
 
@@ -77,6 +79,7 @@ No I don't use Mac 😁
 |Open File and Split Window Vertically| Ctrl , v|
 |Toggle Treminal| Ctrl t|
 |Write with Sudo| Ctrl , w|
+|Fold and Unfold Code| space|
 
 ## Plugin List
 
@@ -85,5 +88,6 @@ plugins are installed by [vim-plug](https://github.com/junegunn/vim-plug).
 - [NERDTree](https://github.com/scrooloose/nerdtree)
 - [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
+- [indentLine](https://github.com/Yggdroot/indentLine)
 - [vim-wakatime](https://github.com/wakatime/vim-wakatime)
 - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
