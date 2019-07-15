@@ -11,7 +11,7 @@
         set laststatus=2
 " Editing Settings
     " basic
-        set backspace=indent,start  " allows backspace to delete hard indents. concat two lines(eol), content added by other insert operation
+        set backspace=indent,start  " allows backspace to delete hard indents. do not concat two lines(eol), content added by other insert operation
         set cursorline  " highlight current line
         set cursorcolumn  " highlight current column
         set number  " display line number
