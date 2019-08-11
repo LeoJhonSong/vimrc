@@ -77,9 +77,10 @@ No I don't use Mac 😁
 |Format Code| Ctrl , f|
 |Open File and Split Window Horizontally| Ctrl , h|
 |Open File and Split Window Vertically| Ctrl , v|
-|Toggle Treminal| Ctrl t|
+|Toggle/Close Terminal| Ctrl t|
 |Write with Sudo| Ctrl , w|
 |Fold and Unfold Code| space|
+|Create Folder Specific Dictionary| Ctrl , z|
 
 ## Plugin List
 

@@ -1,10 +1,13 @@
 " Workbench Settings
-    " Ruler
+    " ruler
         set ruler  "display line number, column number, relative position, etc.
-    " Color Theme and Font Settings
-        colorscheme seoul256
+    " color theme and font settings
+        colorscheme sacredforest_leo
+        let g:gruvbox_guisp_fallback = "bg"  "enable highlight for missspelt word
+        let g:gruvbox_contrast_dark = "hard"
+        set termguicolors  "turn on true color
         set background=dark
-        set t_Co=256  "enable 256 colors display
+        " set t_Co=256  "enable 256 colors display
         set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 16  "GUI font
     " enable powerline for vim
         set rtp+=/home/leo/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
@@ -19,7 +22,12 @@
         set nowrap  " disable line wrap
         set showmatch  " show matched brackets
         set autochdir  " automatically change to current directory
-        set spell
+        " set helplang=cn  " set the language of help document to Chinese
+    " spell checking
+        set spell  " enable spell checking
+        set spellfile=~/.vim/spell/en.utf-8.add
+        " set complete+=kspell  " Autocomplete with dictionary words when spell check is on
+    " folding
         set foldenable
         set foldmethod=syntax
     " tab and space
@@ -35,9 +43,9 @@
         filetype plugin on
         filetype indent on
     " search
-        set hlsearch  " hilight search item
+        set hlsearch  " highlight search item
         set incsearch  " enable incremental search
-    " Syntax
+    " syntax
         syntax on  "so that we have syntax highlight
     " others
         set t_vb=  " disable the annoying bell when did wrong operation
@@ -49,21 +57,23 @@
     " comment and uncomment
     map <leader><C-m> <leader>ci
     " display and hide explorer
-    map <leader><C-e> :NERDTreeToggle<CR>
+    nnoremap <leader><C-e> :NERDTreeToggle<CR>
     " without this, ALT will send `^[` to the terminal, which is the same with ESC
     " execute "set <A-f>=\ef"
     " format whole file
-    map <leader><C-f> gg0=G
+    nnoremap <leader><C-f> gg0=G
     " split window horizontally
-    map <leader><C-h> :sv 
+    nnoremap <leader><C-h> :sv 
     " split window vertically
-    map <leader><C-v> :vs 
-    " toggle terminal
-    map <C-t> :ter<CR><C-w>J
+    nnoremap <leader><C-v> :vs 
+    " toggle terminal at a bottom window with max width
+    nnoremap <C-t> :ter<CR><C-w>L
+    " close terminal
+    tmap <C-t> <C-w>:q!<CR>
     " write with sudo
-    map <leader><C-w> :w !sudo tee >/dev/null %
-    " add word to current folder
-    noremap <leader><C-z> :<C-r>=shellescape(fnamemodify('.', ':p:h:t'), 1)
+    nnoremap <leader><C-w> :w !sudo tee >/dev/null %
+    " add word to current folder dictionary
+    nnoremap <leader><C-z> :exe "setlocal spellfile+=" . <C-r>=shellescape(fnamemodify("en.utf-8.add", ":p"), 1)<CR><CR>
     " fold and unfold
     nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " Plugin Settings
@@ -79,7 +89,10 @@
         let g:ycm_semantic_triggers =  {
             \ 'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}'],
             \ }  " toggle semantic complement whenever there is two characters
+        let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
         let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
+        let g:ycm_collect_identifiers_from_comments_and_strings = 1
+        let g:ycm_autoclose_preview_window_after_completion = 1
         " let g:ycm_filetype_whitelist = {
             " \ "c": 1,
             " \ "cpp": 1,
@@ -106,7 +119,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'wakatime/vim-wakatime'
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
-    " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
