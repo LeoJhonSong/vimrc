@@ -108,7 +108,6 @@
             \ 'ctermfgs': ['yellow', 'lightred', 'lightblue', 'magenta'],
             \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
             \ }
-(((((((((())))))))))
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
