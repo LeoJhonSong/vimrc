@@ -101,6 +101,13 @@
             " \ "html": 1,
             " \ "js": 1,
             " \ }
+    " Rainbow
+        let g:rainbow_active = 1
+        let g:rainbow_conf = {
+            \ 'guifgs': ['yellow', 'lightred', 'lightcyan', 'magenta'],
+            \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
+            \ }
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
@@ -120,6 +127,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'wakatime/vim-wakatime'
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
     Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+    Plug 'luochen1990/rainbow'
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system

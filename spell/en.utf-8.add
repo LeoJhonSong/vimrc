@@ -35,3 +35,6 @@ StartupWMClass
 SONGZhuHeng
 bool
 init
+wakatime
+NERDTree
+indentLine

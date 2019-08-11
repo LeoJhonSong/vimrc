@@ -92,3 +92,4 @@ plugins are installed by [vim-plug](https://github.com/junegunn/vim-plug).
 - [indentLine](https://github.com/Yggdroot/indentLine)
 - [vim-wakatime](https://github.com/wakatime/vim-wakatime)
 - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+- [Rainbow Parentheses Improved](https://github.com/luochen1990/rainbow)
