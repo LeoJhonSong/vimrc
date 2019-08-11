@@ -104,11 +104,11 @@
     " Rainbow
         let g:rainbow_active = 1
         let g:rainbow_conf = {
-            \ 'guifgs': ['yellow', 'lightred', 'lightcyan', 'magenta'],
-            \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \ 'guifgs': ['yellow1', 'lightred', 'Aquamarine1', 'magenta'],
+            \ 'ctermfgs': ['yellow', 'lightred', 'lightblue', 'magenta'],
             \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
             \ }
-
+(((((((((())))))))))
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
