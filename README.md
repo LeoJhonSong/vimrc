@@ -21,8 +21,7 @@ It looks like this👇
 
 ## Pre-Requirement
 
-`clang`, `cmake` is needed. (for the [YCM
-plugin](https://ycm-core.github.io/YouCompleteMe/#linux-64-bit))
+`clang`, `cmake` is needed. (for the [YCM plugin](https://ycm-core.github.io/YouCompleteMe/#linux-64-bit))
 
 ```shell
 sudo apt install clang cmake
@@ -35,10 +34,10 @@ python3 support. You can run `vim --version` to check it.
 
 ### Linux
 
-1.download this repository to **~/.vim/**
+1.download this repository to **~/.vim**
 
 ```shell
-git clone git@github.com:LeoJhonSong/vimrc.git ~/.vim
+git clone https://github.com/LeoJhonSong/vimrc.git ~/.vim
 ```
 
 2.then links **~/.vim/.vimrc** with **~/.vimrc**
@@ -48,17 +47,6 @@ git clone git@github.com:LeoJhonSong/vimrc.git ~/.vim
 ```shell
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
-
-3.⚠️ There is three line you **must** modify in the `.vimrc`
-
-```vim
-" enable powerline for vim
-set rtp+=/home/leo/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
-set laststatus=2
-```
-
-You may either delete them or comment them with `Ctrl , m`, or you may change
-the path to yours.
 
 ### Windows
 

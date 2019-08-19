@@ -9,9 +9,6 @@
         set background=dark
         " set t_Co=256  "enable 256 colors display
         set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 16  "GUI font
-    " enable powerline for vim
-        set rtp+=/home/leo/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
-        set laststatus=2
 " Editing Settings
     " basic
         set backspace=indent,start  " allows backspace to delete hard indents. do not concat two lines(eol), content added by other insert operation
@@ -104,10 +101,15 @@
     " Rainbow
         let g:rainbow_active = 1
         let g:rainbow_conf = {
-            \ 'guifgs': ['yellow1', 'lightred', 'Aquamarine1', 'magenta'],
-            \ 'ctermfgs': ['yellow', 'lightred', 'lightblue', 'magenta'],
+            \ 'guifgs': ['#ffff00', '#00ff00', 'cyan', 'magenta'],
+            \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
             \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
             \ }
+    " airline
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+        let g:airline_detect_spell=0
+
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -119,13 +121,14 @@ endif
 " Load the Plugins
 call plug#begin('~/.vim/plugged')
 " Always ON
+    Plug 'vim-airline/vim-airline'
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
     Plug 'Yggdroot/indentLine'
     Plug 'jiangmiao/auto-pairs'
     Plug 'wakatime/vim-wakatime'
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
-    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+    " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
     Plug 'luochen1990/rainbow'
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
