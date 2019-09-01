@@ -97,6 +97,14 @@
     tmap <C-Down> <C-w><Down>
     tmap <C-Left> <C-w><Left>
     tmap <C-Right> <C-w><Right>
+    nnoremap w= <C-w>+
+    nnoremap w- <C-w>-
+    nnoremap w, <C-w><
+    nnoremap w. <C-w>>
+    nnoremap <F2> <C-w>+
+    nnoremap <F3> <C-w>-
+    nnoremap <F4> <C-w><
+    nnoremap <F5> <C-w>>
 
 " Plugin Settings
     " NERD Tree

@@ -75,6 +75,10 @@ No I don't use Mac 😁
 |switch to the window below| <kbd>Ctrl Down</kbd>|
 |switch to the window left side| <kbd>Ctrl Left</kbd>|
 |switch to the window right side| <kbd>Ctrl Right</kbd>|
+|increase the hight of window| <kbd>w=</kbd> or <kbd>F2</kbd>|
+|decrease the hight of window| <kbd>w-</kbd> or <kbd>F3</kbd>|
+|move left the vertical split line| <kbd>w,</kbd> or <kbd>F4</kbd>|
+|move right the vertical split line| <kbd>w.</kbd> or <kbd>F5</kbd>|
 
 ## Plugin List
 
