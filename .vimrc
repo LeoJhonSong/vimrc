@@ -2,13 +2,23 @@
     " ruler
         set ruler  "display line number, column number, relative position, etc.
     " color theme and font settings
-        colorscheme sacredforest_leo
+        colorscheme gruvbox
         let g:gruvbox_guisp_fallback = "bg"  "enable highlight for missspelt word
         let g:gruvbox_contrast_dark = "hard"
-        set termguicolors  "turn on true color
-        set background=dark
+        set termguicolors  "turn on true color (2^24 colors)
         " set t_Co=256  "enable 256 colors display
+        set background=dark
+    " font
         set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 16  "GUI font
+    " in case color display error in tmux
+        " Refer: http://sunaku.github.io/vim-256color-bce.html
+        if &term =~ '256color'
+            " disable Background Color Erase (BCE) so that color schemes
+            " render properly when inside 256-color tmux and GNU screen.
+            " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+            set t_ut=
+        endif
+    " other
 " Editing Settings
     " basic
         set backspace=indent,start  " allows backspace to delete hard indents. do not concat two lines(eol), content added by other insert operation
@@ -20,6 +30,7 @@
         set showmatch  " show matched brackets
         set autochdir  " automatically change to current directory
         " set helplang=cn  " set the language of help document to Chinese
+        set noswapfile  " disable swap file
     " spell checking
         set spell  " enable spell checking
         set spellfile=~/.vim/spell/en.utf-8.add
@@ -42,17 +53,21 @@
     " search
         set hlsearch  " highlight search item
         set incsearch  " enable incremental search
+        set ignorecase  " disable case sensitive
     " syntax
         syntax on  "so that we have syntax highlight
     " others
-        set t_vb=  " disable the annoying bell when did wrong operation
+        " disable the annoying bell when did wrong operation
+            set novisualbell
+            set noerrorbells
+            set t_vb=
         " set mouse=a  " enable mouse click in vim
         set nocompatible  " get rid of bugs and limits from vi
 " Keybindings and Commands
     " set map leader
     let mapleader=","
     " comment and uncomment
-    map <leader><C-m> <leader>ci
+    nmap <leader><C-m> <leader>ci
     " display and hide explorer
     nnoremap <leader><C-e> :NERDTreeToggle<CR>
     " without this, ALT will send `^[` to the terminal, which is the same with ESC
@@ -73,6 +88,16 @@
     nnoremap <leader><C-z> :exe "setlocal spellfile+=" . <C-r>=shellescape(fnamemodify("en.utf-8.add", ":p"), 1)<CR><CR>
     " fold and unfold
     nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+    " map window switch shortcut
+    nnoremap <C-Up> <C-w><Up>
+    nnoremap <C-Down> <C-w><Down>
+    nnoremap <C-Left> <C-w><Left>
+    nnoremap <C-Right> <C-w><Right>
+    tmap <C-Up> <C-w><Up>
+    tmap <C-Down> <C-w><Down>
+    tmap <C-Left> <C-w><Left>
+    tmap <C-Right> <C-w><Right>
+
 " Plugin Settings
     " NERD Tree
         " show hidden files and folders
@@ -130,6 +155,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
     " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
     Plug 'luochen1990/rainbow'
+    Plug 'vim-scripts/matchit.zip'
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
