@@ -92,3 +92,8 @@ plugins are installed by [vim-plug](https://github.com/junegunn/vim-plug).
 - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
 - [Rainbow Parentheses Improved](https://github.com/luochen1990/rainbow)
 - [matchit](https://github.com/vim-scripts/matchit.zip)
+- [UltiSnips](https://github.com/SirVer/ultisnips)
+- [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets)
+- [EasyMotion](https://github.com/easymotion/vim-easymotion)
+- [Vim Better Whitespace Plugin](https://github.com/ntpeters/vim-better-whitespace)
+- [Asynchronous Lint Engine](https://github.com/dense-analysis/ale)

@@ -18,6 +18,9 @@
             " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
             set t_ut=
         endif
+    " Accelerate
+        set ttyfast
+        set lazyredraw
     " other
 " Editing Settings
     " basic
@@ -34,6 +37,7 @@
     " spell checking
         set spell  " enable spell checking
         set spellfile=~/.vim/spell/en.utf-8.add
+        set spellcapcheck=  " disable capital check
         " set complete+=kspell  " Autocomplete with dictionary words when spell check is on
     " folding
         set foldenable
@@ -115,6 +119,8 @@
         let g:NERDSpaceDelims = 1
         " Use compact syntax for prettified multi-line comments
         let g:NERDCompactSexyComs = 1
+    " supertab
+        let g:SuperTabDefaultCompletionType = '<C-n>'
     " YouCompleteMe
         let g:ycm_semantic_triggers =  {
             \ 'c,cpp,python,java,go,erlang,perl,cs,lua,javascript': ['re!\w{2}'],
@@ -123,14 +129,21 @@
         let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
         let g:ycm_collect_identifiers_from_comments_and_strings = 1
         let g:ycm_autoclose_preview_window_after_completion = 1
-        " let g:ycm_filetype_whitelist = {
-            " \ "c": 1,
-            " \ "cpp": 1,
-            " \ "py": 1,
-            " \ "sh": 1,
-            " \ "html": 1,
-            " \ "js": 1,
-            " \ }
+        let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+        let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+    " ale
+        let g:ale_sign_column_always = 1
+        let g:ale_set_highlights = 1
+        let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+        let g:ale_sign_error = '✗'
+        let g:ale_sign_warning = '⚠'
+        let g:ale_open_list = 1
+        " let g:ale_lint_on_text_changed = 'never'
+        let g:ale_linters = {
+        \   'c++': ['gcc'],
+        \   'c': ['gcc'],
+        \   'python': ['pep8'],
+        \}
     " Rainbow
         let g:rainbow_active = 1
         let g:rainbow_conf = {
@@ -141,7 +154,17 @@
     " airline
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-        let g:airline_detect_spell=0
+        let g:airline_detect_spell = 0
+        let g:airline#extensions#ale#enabled = 1
+        let g:airline#extensions#ale#error_symbol = '✗'
+        let g:airline#extensions#ale#warning_symbol = '⚠'
+    " UltiSnips
+        let g:UltiSnipsExpandTrigger = "<tab>"
+        let g:UltiSnipsJumpForwardTrigger = "<tab>"
+        let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+    " Trailing whitespace
+        let g:better_whitespace_guicolor='Grey93'
+        let g:strip_whitespace_on_save=0
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
@@ -164,6 +187,12 @@ call plug#begin('~/.vim/plugged')
     " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
     Plug 'luochen1990/rainbow'
     Plug 'vim-scripts/matchit.zip'
+    Plug 'ervandew/supertab'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'dense-analysis/ale'
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system

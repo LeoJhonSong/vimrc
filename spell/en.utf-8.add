@@ -46,3 +46,9 @@ io
 cn
 vimtex
 do
+pep8
+gcc
+Wreturn
+printf
+Wimplicit
+error
