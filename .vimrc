@@ -9,7 +9,7 @@
         " set t_Co=256  "enable 256 colors display
         set background=dark
     " font
-        set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 16  "GUI font
+        set gfn=DejaVuSansMono\ NF\ 16  "GUI font
     " in case color display error in tmux
         " Refer: http://sunaku.github.io/vim-256color-bce.html
         if &term =~ '256color'
@@ -24,6 +24,7 @@
     " other
 " Editing Settings
     " basic
+        set encoding=UTF-8
         set backspace=indent,start  " allows backspace to delete hard indents. do not concat two lines(eol), content added by other insert operation
         set cursorline  " highlight current line
         set cursorcolumn  " highlight current column
@@ -147,10 +148,13 @@
     " Rainbow
         let g:rainbow_active = 1
         let g:rainbow_conf = {
-            \ 'guifgs': ['#ffff00', '#00ff00', 'cyan', 'magenta'],
-            \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-            \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
-            \ }
+        \   'guifgs': ['#ffff00', '#00ff00', 'cyan', 'magenta'],
+        \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+        \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+        \   'separately': {
+        \       'nerdtree': 0,
+        \   }
+        \}
     " airline
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
@@ -158,6 +162,7 @@
         let g:airline#extensions#ale#enabled = 1
         let g:airline#extensions#ale#error_symbol = '✗'
         let g:airline#extensions#ale#warning_symbol = '⚠'
+        let g:airline_powerline_fonts = 1
     " UltiSnips
         let g:UltiSnipsExpandTrigger = "<tab>"
         let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -165,6 +170,10 @@
     " Trailing whitespace
         let g:better_whitespace_guicolor='Grey93'
         let g:strip_whitespace_on_save=0
+    " vim-devicons
+        let g:webdevicons_conceal_nerdtree_brackets = 1
+        let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+        let g:DevIconsEnableFoldersOpenClose = 1
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
@@ -193,7 +202,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'easymotion/vim-easymotion'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'dense-analysis/ale'
+    Plug 'ryanoasis/vim-devicons'
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
 call plug#end()
+set noshowmode
+set noshowcmd
+set shortmess+=F

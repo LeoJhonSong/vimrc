@@ -15,22 +15,27 @@ Here is my vim recipe and some note about vim.
 
 It looks like this👇
 
-![Normal mode](appearance1.png)
+![Normal mode with file tree](doc/appearance1.png)
 
-![Insert mode](appearance2.png)
+![Insert mode with complete suggestions](doc/appearance2.png)
 
-![file tree](README/appearance3.png)
+![when error is found](doc/appearance3.png)
 
 ## Pre-Requirement
 
-`clang`, `cmake` is needed. (for the [YCM plugin](https://ycm-core.github.io/YouCompleteMe/#linux-64-bit))
+- `clang`, `cmake` is needed. (for the [YCM plugin](https://ycm-core.github.io/YouCompleteMe/#linux-64-bit))
 
-```shell
-sudo apt install clang cmake
-```
+  ```shell
+  sudo apt install clang cmake
+  ```
 
-Besides, your version of vim should be at least **7.4.1578** and have python or
-python3 support. You can run `vim --version` to check it.
+  Besides, your version of vim should be at least **7.4.1578** and have python
+  or python3 support. You can run `vim --version` to check it.
+
+- a [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) is needed. the
+  [DejaVuSansMono Nerd Font](doc/DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\
+  Windows\ Compatible.ttf) is already in the folder and can be installed with a
+  single click.
 
 ## Installation
 
