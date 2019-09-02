@@ -15,9 +15,15 @@ Here is my vim recipe and some note about vim.
 
 It looks like this👇
 
+Normal mode with file tree
+
 ![Normal mode with file tree](doc/appearance1.png)
 
+Insert mode with complete suggestions
+
 ![Insert mode with complete suggestions](doc/appearance2.png)
+
+when error is found
 
 ![when error is found](doc/appearance3.png)
 
@@ -33,9 +39,12 @@ It looks like this👇
   or python3 support. You can run `vim --version` to check it.
 
 - a [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) is needed. the
-  [DejaVuSansMono Nerd Font](doc/DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\
-  Windows\ Compatible.ttf) is already in the folder and can be installed with a
-  single click.
+  [DejaVuSansMono Nerd
+  Font](doc/DejaVu-Sans-Mono-Nerd-Font-Complete-Windows-Compatible.ttf) is
+  already in the folder and can be installed with a single click.
+
+💡 you may face with problem like this: [some icons becomes a chinese
+character](https://github.com/ryanoasis/vim-devicons/issues/270)
 
 ## Installation
 
