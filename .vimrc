@@ -175,6 +175,16 @@
         let g:webdevicons_conceal_nerdtree_brackets = 1
         let g:WebDevIconsUnicodeDecorateFolderNodes = 1
         let g:DevIconsEnableFoldersOpenClose = 1
+    " Markdown Preivew
+        function! g:Open_browser(url)
+            silent exe ":ter browsh --startup-url "a:url
+            silent exe "normal \<C-w>L<C-w>h"
+        endfunction
+        let g:mkdp_browserfunc = 'g:Open_browser'
+        let g:mkdp_open_ip = 'localhost'
+        nnoremap <leader><C-r> :w<CR><C-w>l<C-r><C-w>h
+        nnoremap <Down> jzt<C-w>l<Down><C-w>h
+        nnoremap <Up> kzt<C-w>l<Up><C-w>h
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
@@ -204,6 +214,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'dense-analysis/ale'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " When LaTeX
     " Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
