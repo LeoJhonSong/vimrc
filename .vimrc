@@ -36,7 +36,7 @@
         " set helplang=cn  " set the language of help document to Chinese
         set noswapfile  " disable swap file
     " spell checking
-        set spell  " enable spell checking
+        " set spell  " enable spell checking
         set spellfile=~/.vim/spell/en.utf-8.add
         set spellcapcheck=  " disable capital check
         " set complete+=kspell  " Autocomplete with dictionary words when spell check is on
