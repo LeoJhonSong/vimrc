@@ -182,9 +182,6 @@
         endfunction
         let g:mkdp_browserfunc = 'g:Open_browser'
         let g:mkdp_open_ip = 'localhost'
-        nnoremap <leader><C-r> :w<CR><C-w>l<C-r><C-w>h
-        nnoremap <Down> jzt<C-w>l<Down><C-w>h
-        nnoremap <Up> kzt<C-w>l<Up><C-w>h
 
 """""""""""""""""""""""""""configurations of vim-plug""""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
