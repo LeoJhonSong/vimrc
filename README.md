@@ -112,3 +112,4 @@ plugins are installed by [vim-plug](https://github.com/junegunn/vim-plug).
 - [EasyMotion](https://github.com/easymotion/vim-easymotion)
 - [Vim Better Whitespace Plugin](https://github.com/ntpeters/vim-better-whitespace)
 - [Asynchronous Lint Engine](https://github.com/dense-analysis/ale)
+- [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
