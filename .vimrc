@@ -178,7 +178,7 @@
     " Markdown Preivew
         function! g:Open_browser(url)
             silent exe ":ter browsh --startup-url "a:url
-            silent exe "normal \<C-w>L<C-w>h"
+            silent exe "normal \<C-w>L\<C-w>h"
         endfunction
         let g:mkdp_browserfunc = 'g:Open_browser'
         let g:mkdp_open_ip = 'localhost'
