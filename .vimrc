@@ -136,7 +136,7 @@
         let g:ale_sign_column_always = 1
         let g:ale_set_highlights = 1
         let g:ale_echo_msg_format = '[%linter%] [%code%]: %s'
-        let g:ale_sign_error = ''
+        let g:ale_sign_error = ''
         let g:ale_sign_warning = ''
         let g:ale_open_list = 1
         " let g:ale_lint_on_text_changed = 'never'
@@ -161,7 +161,7 @@
         let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
         let g:airline_detect_spell = 0
         let g:airline#extensions#ale#enabled = 1
-        let g:airline#extensions#ale#error_symbol = ' '
+        let g:airline#extensions#ale#error_symbol = ' '
         let g:airline#extensions#ale#warning_symbol = ' '
         let g:airline_powerline_fonts = 1
     " UltiSnips
