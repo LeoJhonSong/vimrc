@@ -145,7 +145,7 @@
         \   'c': ['gcc'],
         \   'python': ['pycodestyle'],
         \}
-        let g:ale_python_pycodestyle_options = '--ignore=E266,E501'
+        let g:ale_python_pycodestyle_options = '--ignore=E266,E501,W503'
     " Rainbow
         let g:rainbow_active = 1
         let g:rainbow_conf = {
