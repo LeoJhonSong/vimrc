@@ -71,6 +71,12 @@
 " Keybindings and Commands
     " set map leader
     let mapleader=","
+    " set shortcut to quit
+    nnoremap <leader>q :q<CR>
+    " write
+    nnoremap <leader>w :w<CR>
+    " write and quit
+    nnoremap <Left>q :wq<CR>
     " comment and uncomment
     nmap <leader><C-m> <leader>ci
     " display and hide explorer
