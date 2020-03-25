@@ -82,7 +82,7 @@
         " write with sudo
         nnoremap <leader><C-w> :w !sudo tee >/dev/null %
         " quit
-        nnoremap ;q :q<CR>
+        nnoremap <BS> :q<CR>
         " write and quit
         nnoremap <leader>q :wq<CR>
     " comment and uncomment
@@ -93,8 +93,8 @@
     " format whole file
         nnoremap <leader>f gg0=G
     " split window
-        nnoremap <leader><C-h> :sv 
-        nnoremap <leader><C-v> :vs 
+        nnoremap <leader>h :sv 
+        nnoremap <leader>v :vs 
     " terminal
         " open a terminal at the right side
         nnoremap <C-t> :ter ++close<CR><C-w>L
@@ -105,7 +105,7 @@
     " add word to current folder dictionary
         nnoremap <leader><C-z> :exe "setlocal spellfile+=" . <C-r>=shellescape(fnamemodify("en.utf-8.add", ":p"), 1)<CR><CR>
     " fold and unfold
-        nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+        nnoremap <Enter> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
     " focus window switch
         nnoremap <C-Up> <C-w><Up>
         nnoremap <C-Down> <C-w><Down>

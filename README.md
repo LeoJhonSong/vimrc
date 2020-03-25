@@ -4,13 +4,13 @@ Here is my vim recipe and some note about vim.
 
 ---
 
-1. [Pre-Requirement](#pre-requirement)
-2. [Installation](#installation)
-   1. [Linux](#linux)
-   2. [Windows](#windows)
-   3. [Mac](#mac)
-3. [Shortcuts](#shortcuts)
-4. [Plugin List](#plugin-list)
+1. [Pre-Requirement](#Pre-Requirement)
+2. [Installation](#Installation)
+   1. [Linux](#Linux)
+   2. [Windows](#Windows)
+   3. [Mac](#Mac)
+3. [Shortcuts](#Shortcuts)
+4. [Plugin List](#Plugin-List)
 
 ---
 
@@ -51,19 +51,21 @@ character](https://github.com/ryanoasis/vim-devicons/issues/270)
 
 ### Linux
 
-1.download this repository to **~/.vim**
+1. download this repository to **~/.vim**
 
-```shell
-git clone https://github.com/LeoJhonSong/vimrc.git ~/.vim
-```
+   ```shell
+   git clone https://github.com/LeoJhonSong/vimrc.git ~/.vim
+   ```
 
-2.then links **~/.vim/.vimrc** with **~/.vimrc**
+2. in your `~/.vimrc`, add a line at the top:
 
-   ⚠️ notice that you have to make sure **~/.vimrc** does not exist before this
+   ```vimrc
+   source ~/.vim/default.vim
+   ```
 
-```shell
-ln -s ~/.vim/.vimrc ~/.vimrc
-```
+💡 Why top?
+
+By doing so you are allowed to cover settings with your own values, as you set your values **after** `default.vim` is sourced.
 
 ### Windows
 
@@ -77,23 +79,28 @@ No I don't use Mac 😁
 
 |Action|Keyboard Shortcut|
 |-|-|
-|Comment/Uncomment| <kbd>Ctrl , m</kbd>|
-|Display/Hide File Explorer| <kbd>Ctrl , e</kbd>|
-|Format Code| <kbd>Ctrl , f</kbd>|
-|Open File and Split Window Horizontally| <kbd>Ctrl , h</kbd>|
-|Open File and Split Window Vertically| <kbd>Ctrl , v</kbd>|
-|Toggle/Close Terminal| <kbd>Ctrl t</kbd>|
-|Write with Sudo| <kbd>Ctrl , w</kbd>|
-|Fold and Unfold Code| <kbd>space</kbd>|
-|Create Folder Specific Dictionary| <kbd>Ctrl , z</kbd>|
-|switch to the window above| <kbd>Ctrl Up</kbd>|
-|switch to the window below| <kbd>Ctrl Down</kbd>|
-|switch to the window left side| <kbd>Ctrl Left</kbd>|
-|switch to the window right side| <kbd>Ctrl Right</kbd>|
-|increase the hight of window| <kbd>w=</kbd> or <kbd>F2</kbd>|
-|decrease the hight of window| <kbd>w-</kbd> or <kbd>F3</kbd>|
-|move left the vertical split line| <kbd>w,</kbd> or <kbd>F4</kbd>|
-|move right the vertical split line| <kbd>w.</kbd> or <kbd>F5</kbd>|
+|Quit| <kbd>Backspace</kbd>|
+|Write| <kbd>Space</kbd> <kbd>w</kbd>|
+|Write and Quit| <kbd>Space</kbd> <kbd>q</kbd>|
+|Comment/Uncomment| <kbd>Space</kbd> <kbd>m</kbd>|
+|Display/Hide File Explorer| <kbd>Space</kbd> <kbd>e</kbd>|
+|Fold and Unfold Code| <kbd>Enter</kbd>|
+|Format Code| <kbd>Space</kbd> <kbd>f</kbd>|
+|Open File and Split Window Horizontally| <kbd>Space</kbd> <kbd>h</kbd>|
+|Open File and Split Window Vertically| <kbd>Space</kbd> <kbd>v</kbd>|
+|Open/Hide Terminal on side| <kbd>Ctrl</kbd> <kbd>t</kbd>|
+|Open Terminal in Tab| <kbd>Space</kbd> <kbd>t</kbd>|
+|Switch Tab| <kbd>Space</kbd> <kbd>Tab</kbd> or <kbd>Space</kbd> <kbd>Shift</kbd> <kbd>Tab</kbd>|
+|Write with Sudo| <kbd>Space</kbd> <kbd>Ctrl</kbd> <kbd>w</kbd>|
+|Create Folder Specific Dictionary| <kbd>Space</kbd> <kbd>Ctrl</kbd> <kbd>z</kbd>|
+|switch to the window above| <kbd>Ctrl</kbd> <kbd>↑</kbd>|
+|switch to the window below| <kbd>Ctrl</kbd> <kbd>↓</kbd>|
+|switch to the window left side| <kbd>Ctrl</kbd> <kbd>←</kbd>|
+|switch to the window right side| <kbd>Ctrl</kbd> <kbd>→</kbd>|
+|increase the hight of window| <kbd>F2</kbd> |
+|decrease the hight of window| <kbd>F3</kbd>|
+|move left the vertical split line| <kbd>F4</kbd>|
+|move right the vertical split line| <kbd>F5</kbd>|
 
 ## Plugin List
 
