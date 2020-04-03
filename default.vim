@@ -28,7 +28,7 @@
     " other
         set nocompatible  " get rid of bugs and limits from vi
         set noshowmode  " do not show vim mode under status bar
-        set mouse=a  " enable mouse click in vim
+        " set mouse=a  " enable mouse click in vim
 " Editing Settings
     " basics
         set encoding=UTF-8  " learn more from: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
@@ -153,7 +153,8 @@
         let g:UltiSnipsJumpForwardTrigger = "<tab>"
         let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
     " airline
-        let g:airline_theme='molokai'
+        " good theme list: base16_google, molokai, light, badwolf, kolor
+        let g:airline_theme='dark'
         let g:airline_powerline_fonts = 1
         let g:airline_detect_spell = 0
         let g:airline#extensions#tabline#enabled = 1
