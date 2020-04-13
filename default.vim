@@ -24,7 +24,7 @@
         set gfn=DejaVuSansMono\ NF\ 16  "GUI font
     " Accelerate
         set ttyfast
-        " set lazyredraw  " disable it if you feel no fluent enough
+        set lazyredraw  " disable it if you feel no fluent enough
     " other
         set nocompatible  " get rid of bugs and limits from vi
         set noshowmode  " do not show vim mode under status bar
@@ -36,8 +36,9 @@
         set nowrap  " disable line wrap
         set showmatch  " show matched brackets
         set autochdir  " automatically change to current directory
+        set list lcs=nbsp:%,trail:·  " indicate trailing spaces
         " set helplang=cn  " set the language of help document to Chinese
-        set noswapfile  " disable swap file
+        " set noswapfile  " disable swap file
     " syntax
         syntax on  "so that we have syntax highlight
     " tab and space
@@ -46,8 +47,7 @@
         set shiftwidth=4  " when indenting with '>', use 4 spaces width
         set smarttab
         set expandtab  " on pressing tab, insert 4 spaces
-        set list lcs=nbsp:%,trail:·  " indicate trailing spaces
-        " set list lcs=tab:\|\  " indicates hard tabs
+        set list lcs=tab:\|\  " indicates hard tabs
         set autoindent
     " filetype
         filetype on
@@ -80,7 +80,7 @@
         " write
         nnoremap <leader>w :w<CR>
         " write with sudo
-        nnoremap <leader><C-w> :w !sudo tee >/dev/null %
+        nnoremap <leader><C-w> :w !sudo tee > /dev/null %
         " quit
         nnoremap <BS> :q<CR>
         " write and quit
@@ -102,6 +102,9 @@
         tnoremap <C-t> <C-w>:hide<CR>
         " open terminal in a new tab
         nnoremap <leader>t :tabnew \| :ter ++curwin ++close<CR>
+        tnoremap <leader>t :tabnew \| :ter ++curwin ++close<CR>
+        " enable scroll in terminal
+        tnoremap <ScrollWheelUp> <C-w>Nk
     " add word to current folder dictionary
         nnoremap <leader><C-z> :exe "setlocal spellfile+=" . <C-r>=shellescape(fnamemodify("en.utf-8.add", ":p"), 1)<CR><CR>
     " fold and unfold
