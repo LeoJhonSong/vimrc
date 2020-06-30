@@ -21,7 +21,7 @@
                 set t_ut=
             endif
     " font
-        set gfn=DejaVuSansMono\ NF\ 16  "GUI font
+        " set gfn=DejaVuSansMono\ NF\ 16  "GUI font
     " Accelerate
         set ttyfast
         set lazyredraw  " disable it if you feel no fluent enough
@@ -77,21 +77,21 @@
     " set map leader
         let mapleader=" "
     " write and quit
-        " write
-        nnoremap <leader>w :w<CR>
+        " write silently
+        nnoremap <silent><leader>w :silent :w<CR>
         " write with sudo
         nnoremap <leader><C-w> :w !sudo tee > /dev/null %
         " quit
         nnoremap <BS> :q<CR>
-        " write and quit
-        nnoremap <leader>q :wq<CR>
+        " write and quit (failure will be ignored)
+        nnoremap <leader>q :silent! :wq<CR>
     " comment and uncomment
         nmap <leader>m <leader>ci
         vmap <leader>m <leader>ci
     " display and hide explorer
         nnoremap <silent><leader>e :NERDTreeToggle<CR>
     " format whole file
-        nnoremap <leader>f gg0=G
+        " nnoremap <leader>f gg0=G
     " split window
         nnoremap <leader>h :sv 
         nnoremap <leader>v :vs 
@@ -200,7 +200,7 @@
         let g:ale_echo_msg_format = '[%linter%] [%code%]: %s'
         let g:ale_sign_error = ''
         let g:ale_sign_warning = ''
-        let g:ale_open_list = 1
+        " let g:ale_open_list = 1
         " let g:ale_lint_on_text_changed = 'never'
         let g:ale_linters = {
         \   'c++': ['gcc'],
@@ -218,8 +218,8 @@
 
 """""""""""""""""""""""""""configurations of vim-plug"""""""""""""""""""""""""""
 " Automatically install vim-plug if not installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
