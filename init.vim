@@ -25,10 +25,17 @@
     " Accelerate
         set ttyfast
         set lazyredraw  " disable it if you feel no fluent enough
+    " Terminal
+        " set auto enter insert mode when a terminal is opened, and auto quit when zsh ends
+        autocmd TermOpen * startinsert
+        autocmd TermClose term://*
+            \ if(expand('<afile>') =~ "zsh") |
+            \   call nvim_input('<CR>') |
+            \ endif
     " other
         set nocompatible  " get rid of bugs and limits from vi
         set noshowmode  " do not show vim mode under status bar
-        " set mouse=a  " enable mouse click in vim
+        set mouse=nv  " enable mouse click in vim
 " Editing Settings
     " basics
         set encoding=UTF-8  " learn more from: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
@@ -49,6 +56,7 @@
         set expandtab  " on pressing tab, insert 4 spaces
         set list lcs=tab:\|\  " indicates hard tabs
         set autoindent
+        set smartindent  " Do smart autoindenting when starting a new line
     " filetype
         filetype on
         filetype plugin on
@@ -77,27 +85,34 @@
     " set map leader
         let mapleader=" "
     " write and quit
-        " write silently
-        nnoremap <silent><leader>w :silent :w<CR>
+        " write all files silently
+        nnoremap <silent><leader>w :silent :wa<CR>
         " write with sudo
         nnoremap <leader><C-w> :w !sudo tee > /dev/null %
         " quit
-        nnoremap <BS> :q<CR>
+        nnoremap <silent><BS> :q<CR>
         " write and quit (failure will be ignored)
         nnoremap <leader>q :silent! :wq<CR>
+    " yank & copy & put
+        nnoremap Y y$
+        " copy content in unnamed registor to system clipboard
+        nnoremap <silent><leader>y :let @+ = @"<CR>
+        " paste and then restore the main register
+        xnoremap <silent>p p:let @+=@0<CR>:let @"=@0<CR>
     " comment and uncomment
         nmap <leader>m <leader>ci
         vmap <leader>m <leader>ci
     " display and hide explorer
         nnoremap <silent><leader>e :NERDTreeToggle<CR>
     " format whole file
+        nnoremap <silent><leader>f :Autoformat<CR>
         " nnoremap <leader>f gg0=G
     " split window
         nnoremap <leader>h :sv 
         nnoremap <leader>v :vs 
     " terminal
-        " open a terminal at the right side
-        nnoremap <C-t> :ter ++close<CR><C-w>L
+        " open a terminal vertically spilted
+        nnoremap <C-t> :vs term://zsh<CR>
         " hide terminal
         tnoremap <C-t> <C-w>:hide<CR>
         " open terminal in a new tab
@@ -118,16 +133,30 @@
         tnoremap <C-Down> <C-w><Down>
         tnoremap <C-Left> <C-w><Left>
         tnoremap <C-Right> <C-w><Right>
-        nnoremap <F2> <C-w>+
-        nnoremap <F3> <C-w>-
-        nnoremap <F4> <C-w><
-        nnoremap <F5> <C-w>>
+        " nnoremap <F2> <C-w>+
+        " nnoremap <F3> <C-w>-
+        " nnoremap <F4> <C-w><
+        " nnoremap <F5> <C-w>>
     " tab switch
         noremap <silent><leader><Tab> :tabnext<CR>
         noremap <silent><leader><S-Tab> :tabprev<CR>
         tnoremap <silent><leader><Tab> <C-w>:tabnext<CR>
         tnoremap <silent><leader><S-Tab> <C-w>:tabnext<CR>
-
+" Language Specific
+    " Compile and Run
+        nnoremap <F5> :call CompileRun()<CR>
+        func! CompileRun()
+            exec ":wa"
+            if &filetype == 'c'
+                :echo 'TODO'
+            elseif &filetype == 'cpp'
+                :echo 'TODO'
+            elseif &filetype == 'python'
+                :vs term://python %
+            elseif &filetype == 'sh'
+                :vs term://sh %
+            endif
+        endfunc
 " Plugin Settings
     " Rainbow
         let g:rainbow_active = 1
@@ -191,7 +220,7 @@
         let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
         let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
         let g:ycm_collect_identifiers_from_comments_and_strings = 1
-        let g:ycm_autoclose_preview_window_after_completion = 1
+        let g:ycm_autoclose_preview_window_after_completion = 0
         let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
         let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
     " ale
@@ -208,6 +237,13 @@
         \   'python': ['pycodestyle'],
         \}
         let g:ale_python_pycodestyle_options = '--ignore=E266,E501,W503'
+    " vim-autoformat
+        let g:formatdef_autopep8 = '"autopep8 --aggressive --aggressive  --max-line-length=119 -"'
+        let g:formatters_python = ['autopep8']
+    " Vimtex
+        let g:vimtex_view_general_viewer = 'okular'
+        let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+        let g:vimtex_view_general_options_latexmk = '--unique'
     " Markdown Preivew
         function! g:Open_browser(url)
             silent exe ":ter browsh --startup-url "a:url
@@ -250,11 +286,13 @@ call plug#begin('~/.vim/plugged')
     " language
         Plug 'dense-analysis/ale'  "multi-language  linter
         Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
+        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        Plug 'Chiel92/vim-autoformat'
     " others
         Plug 'wakatime/vim-wakatime'
 " When Markdown
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+    " Plug 'iamcco/markdown-preview.nvim', { 'for': 'md', 'do': { -> mkdp#util#install() } }
 " When LaTeX
-    " Plug 'lervag/vimtex', { 'for': 'tex '}
+    Plug 'lervag/vimtex', { 'for': 'tex '}
 " Initialize plugin system
 call plug#end()
