@@ -87,8 +87,8 @@
     " write and quit
         " write all files silently
         nnoremap <silent><leader>w :silent :wa<CR>
-        " write with sudo
-        nnoremap <leader><C-w> :w !sudo tee > /dev/null %
+        " write with sudo, with the GUI askpass program qt4-ssh-askpass
+        nnoremap <silent><leader><C-w> :w !export SUDO_ASKPASS=/usr/bin/ksshaskpass && sudo -A tee > /dev/null %<CR>
         " quit
         nnoremap <silent><BS> :q<CR>
         " write and quit (failure will be ignored)
@@ -112,7 +112,7 @@
         nnoremap <leader>v :vs 
     " terminal
         " open a terminal vertically spilted
-        nnoremap <C-t> :vs term://zsh<CR>
+        nnoremap <C-t> :rightb :vs term://zsh<CR>
         " hide terminal
         tnoremap <C-t> <C-w>:hide<CR>
         " open terminal in a new tab
@@ -238,7 +238,7 @@
         \}
         let g:ale_python_pycodestyle_options = '--ignore=E266,E501,W503'
     " vim-autoformat
-        let g:formatdef_autopep8 = '"autopep8 --aggressive --aggressive  --max-line-length=119 -"'
+        let g:formatdef_autopep8 = '"autopep8 --aggressive --aggressive  --max-line-length=120 -"'
         let g:formatters_python = ['autopep8']
     " Vimtex
         let g:vimtex_view_general_viewer = 'okular'
