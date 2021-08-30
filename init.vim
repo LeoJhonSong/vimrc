@@ -220,7 +220,7 @@
         let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
         let g:ycm_show_diagnostics_ui = 0  " disable warnings and error notation by YCM
         let g:ycm_collect_identifiers_from_comments_and_strings = 1
-        let g:ycm_autoclose_preview_window_after_completion = 0
+        let g:ycm_autoclose_preview_window_after_completion = 1
         let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
         let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
     " ale
