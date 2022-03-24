@@ -5,7 +5,7 @@
         set cursorline  " highlight current line
         set cursorcolumn  " highlight current column
         set number  " display line number
-        set colorcolumn=80,120  " set line length notification
+        set colorcolumn=80,150  " set line length notification
         colorscheme molokai
         let g:gruvbox_guisp_fallback = "bg"  "enable highlight for missspelt word
         let g:gruvbox_contrast_dark = "hard"
@@ -60,7 +60,7 @@
     " folding
         set foldenable
         set foldmethod=syntax
-        set foldlevel=99  " leave code unfolded for default
+        setlocal foldlevel=1  " fold all code. set to 99 to leave code unfolded for default
     " spell checking
         " set spell  " enable spell checking
         set spellfile=~/.vim/spell/en.utf-8.add
@@ -103,12 +103,12 @@
         nnoremap <leader>v :vs 
     " terminal
         " open a terminal vertically spilted
-        nnoremap <C-t> :rightb :vs term://zsh<CR>
+        nnoremap <C-t> :botright :sv term://zsh<CR>
         " hide terminal
         tnoremap <C-t> <C-w>:hide<CR>
         " open terminal in a new tab
-        nnoremap <leader>t :tabnew \| :ter ++curwin ++close<CR>
-        tnoremap <leader>t :tabnew \| :ter ++curwin ++close<CR>
+        nnoremap <leader>t :tabnew term://zsh<CR>
+        tnoremap <leader>t :tabnew term://zsh<CR>
         " enable scroll in terminal
         tnoremap <ScrollWheelUp> <C-w>Nk
     " add word to current folder dictionary
@@ -266,6 +266,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'ervandew/supertab'
         Plug 'SirVer/ultisnips'
         Plug 'honza/vim-snippets'
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'  " TODO: check https://github.com/junegunn/fzf.vim
     " theme
         Plug 'vim-airline/vim-airline'  " status bar theme
         Plug 'vim-airline/vim-airline-themes'
