@@ -9,17 +9,8 @@
         colorscheme molokai
         let g:gruvbox_guisp_fallback = "bg"  "enable highlight for missspelt word
         let g:gruvbox_contrast_dark = "hard"
-        set termguicolors  "turn on true color (2^24 colors)
-        " set t_Co=256  "enable 256 colors display
+        " set termguicolors  "turn on true color (2^24 colors)
         set background=dark
-        " in case color display error in tmux
-            " Refer: http://sunaku.github.io/vim-256color-bce.html
-            if &term =~ '256color'
-                " disable Background Color Erase (BCE) so that color schemes
-                " render properly when inside 256-color tmux and GNU screen.
-                " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-                set t_ut=
-            endif
     " font
         " set gfn=DejaVuSansMono\ NF\ 16  "GUI font
     " Accelerate
