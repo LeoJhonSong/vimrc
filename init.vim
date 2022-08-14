@@ -60,7 +60,7 @@
     " folding
         set foldenable
         set foldmethod=syntax
-        setlocal foldlevel=1  " fold all code. set to 99 to leave code unfolded for default
+        setlocal foldlevel=99  " fold all code. set to 99 to leave code unfolded for default
     " spell checking
         " set spell  " enable spell checking
         set spellfile=~/.vim/spell/en.utf-8.add
