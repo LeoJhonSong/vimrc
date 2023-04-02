@@ -215,17 +215,25 @@
         let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
         let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
     " ale
+        set omnifunc=ale#completion#OmniFunc
+        let g:ale_completion_enabled = 1
         let g:ale_sign_column_always = 1
         let g:ale_set_highlights = 1
+        let g:ale_set_ballons = 1
         let g:ale_echo_msg_format = '[%linter%] [%code%]: %s'
+        let g:ale_virtualtext_cursor = 1
         let g:ale_sign_error = ''
         let g:ale_sign_warning = ''
         " let g:ale_open_list = 1
         " let g:ale_lint_on_text_changed = 'never'
+        let g:ale_verilog_xvlog_executable = '/home/leo/local/Xilinx/Vivado/2022.2/bin/xvlog'
         let g:ale_linters = {
         \   'c++': ['gcc'],
         \   'c': ['gcc'],
         \   'python': ['pycodestyle'],
+        \}
+        let g:ale_fixers = {
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \}
         let g:ale_python_pycodestyle_options = '--ignore=E266,E501,W503'
     " vim-autoformat
@@ -277,7 +285,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'airblade/vim-gitgutter'
     " language
         Plug 'dense-analysis/ale'  "multi-language  linter
-        Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
+        " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'}  " will run the command of 'do' after download
         " Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'Chiel92/vim-autoformat'
     " others
