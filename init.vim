@@ -9,7 +9,7 @@
         colorscheme molokai
         let g:gruvbox_guisp_fallback = "bg"  "enable highlight for missspelt word
         let g:gruvbox_contrast_dark = "hard"
-        " set termguicolors  "turn on true color (2^24 colors)
+        set termguicolors  "turn on true color (2^24 colors)
         set background=dark
     " font
         " set gfn=DejaVuSansMono\ NF\ 16  "GUI font
